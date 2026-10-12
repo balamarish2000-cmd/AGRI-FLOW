@@ -220,8 +220,8 @@ raale/
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/agriflow/agriflow.git
-cd agriflow
+git clone https://github.com/balamarish2000-cmd/AGRI-FLOW.git
+cd AGRI-FLOW
 ```
 
 ### Step 2: Configure Environment Variables
@@ -292,10 +292,10 @@ npm run dev
 
 ## 10. Running Automated Tests
 
-AGRI-FLOW includes a comprehensive automated testing suite covering both frontend and backend layers.
+AGRI-FLOW includes a comprehensive automated testing suite covering both frontend and backend layers with **56 total tests passing (100% pass rate)**.
 
 ### Frontend Unit Tests (Vitest & React Testing Library)
-Run the 27 frontend unit tests covering ErrorBoundary recovery, API client status handling, token lifecycle, and input validators:
+Run the 40 frontend unit tests covering ErrorBoundary recovery, API client status handling, token lifecycle, input validators, language switching, network status banner, and booking list rendering:
 ```bash
 npm test
 ```
@@ -303,10 +303,22 @@ To run tests with watch mode:
 ```bash
 npm run test:watch
 ```
-To run test coverage report:
+To run test coverage report with v8:
 ```bash
 npm run test:coverage
 ```
+
+#### Frontend Test Coverage Breakdown (v8 Engine)
+| Module / File | % Statements | % Branch | % Functions | % Lines |
+| :--- | :--- | :--- | :--- | :--- |
+| `src/components/ErrorBoundary.tsx` | 98.33% | 87.50% | 100.00% | 98.33% |
+| `src/components/LanguageSelector.tsx` | 100.00% | 100.00% | 100.00% | 100.00% |
+| `src/components/OfflineBanner.tsx` | 100.00% | 100.00% | 100.00% | 100.00% |
+| `src/components/ProtectedRoute.tsx` | 85.00% | 87.50% | 100.00% | 85.00% |
+| `src/pages/farmer/FarmerBookings.tsx` | 100.00% | 86.66% | 100.00% | 100.00% |
+| `src/utils/validation.ts` | 96.82% | 93.93% | 100.00% | 96.82% |
+| `src/services/api.ts` | 77.01% | 73.07% | 100.00% | 77.01% |
+| `src/i18n/translations.ts` | 97.67% | 100.00% | - | 97.67% |
 
 ### Backend Unit & Integration Tests (Pytest)
 Run the 16 backend unit & integration tests covering Pydantic schemas, password hashing, JWT RBAC, slot booking, and payment verification:
@@ -375,7 +387,7 @@ npm run build     # Compiles production bundle in dist/
 | **Security Standards** | Passwords & Auth tokens | Completed | Bcrypt hash, JWT bearer tokens, RBAC roles |
 | **Payment Integration** | Tamper-proof payment pipeline | Completed | Razorpay order generation & HMAC-SHA256 verification |
 | **External Integration**| Telephony communications | Completed | Twilio REST API with multilingual templating |
-| **Automated Testing** | Unit & integration tests | Completed | 27 Vitest frontend tests + 16 Pytest backend tests |
+| **Automated Testing** | Unit & integration tests | Completed | 40 Vitest frontend tests + 16 Pytest backend tests (56 total, 100% pass) |
 | **Error Handling** | Fault isolation & fallback | Completed | React ErrorBoundary + structured ApiError handling |
 | **Documentation** | Comprehensive technical docs | Completed | Root `README.md`, `docs/API.md`, `docs/DATABASE.md` |
 | **CI/CD Automation** | Automated build & test pipeline | Completed | GitHub Actions workflow (`.github/workflows/ci.yml`) |
